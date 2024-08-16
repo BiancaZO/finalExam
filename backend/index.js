@@ -21,7 +21,8 @@ app.use(cors(
 app.use(express.json())
 
 // MongoDB connection
-const MONGO_URI = 'mongodb+srv://finaluser:12345@cluster0.sb5kqqa.mongodb.net/BookDB?retryWrites=true&w=majority&appName=Cluster0'
+// const MONGO_URI = 'mongodb+srv://finaluser:12345@cluster0.sb5kqqa.mongodb.net/BookDB?retryWrites=true&w=majority&appName=Cluster0'
+const MONGO_URI = 'mongodb://127.0.0.1:27017/BookDB'
 
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
