@@ -7,14 +7,16 @@ import BookCard from './BookCard';
 
 const BookList = () => {
     const [books, setBooks] = useState([]);
-    https://rafael-300335322-api.vercel.app/
+
     useEffect(() => {
-        axios.get('https://final-exam-back.vercel.app')
+        // axios.get('https://final-exam-back.vercel.app')
+        //     .then(res => setBooks(res.data))
+        //     .catch(err => console.error(err));
+
+            axios.get('http://localhost:5000')
             .then(res => setBooks(res.data))
             .catch(err => console.error(err));
     }, []);
-
-    // Update the state by removing the deleted book
     const handleDeleteBook = (id) => {
         setBooks(books.filter(book => book._id !== id));
     };
@@ -48,14 +50,12 @@ const BookList = () => {
                         </div>
                     </div>
                            </div>
-
                     <br />
                     <hr />
 
                 <div className='list'>{bookList}</div>
 
             </div>
-
         </div>
     )
 };

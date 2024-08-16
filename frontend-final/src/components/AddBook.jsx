@@ -3,9 +3,12 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
 
-// https://final-exam-back.vercel.app/ -backend
+// https://final-exam-back.vercel.app/-backend
 // http://localhost:5000
 
+        // axios.post('https://final-exam-back.vercel.app/add', newBook)
+        //     .then(() => navigate('/'))
+        //     .catch(err => console.error(err));
 
 const AddBook = () => {
     const [bookTitle, setTitle] = useState('');
@@ -17,13 +20,9 @@ const AddBook = () => {
         e.preventDefault();
         const newBook = { bookTitle, bookAuthor, description };
 
-        axios.post('https://final-exam-back.vercel.app/add', newBook)
+        axios.post('http://localhost:5000/add', newBook)
             .then(() => navigate('/'))
             .catch(err => console.error(err));
-
-        // axios.post('http://localhost:5000/add', newBook)
-        //     .then(() => navigate('/'))
-        //     .catch(err => console.error(err));
     };
 
     return (
@@ -50,9 +49,13 @@ const AddBook = () => {
                                     type='text'
                                     placeholder='Title of the Book'
                                     value={bookTitle}
-                                    onChange={(e) => setTitle(e.target.value)}/>  
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    
+                                />  
                             </div>
+
                             <br />
+
                             <div className="form-group" >
                                 <input 
                                     className='form-control'

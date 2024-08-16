@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<BookList />} />
-        <Route path="/add-book" element={<AddBook />} />
+        <Route path="/create-book" element={<AddBook />} />
       </Routes>
     </BrowserRouter>
   )
