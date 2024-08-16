@@ -9,7 +9,7 @@ const BookList = () => {
     const [books, setBooks] = useState([]);
     https://rafael-300335322-api.vercel.app/
     useEffect(() => {
-        axios.get('http://localhost:5000')
+        axios.get('https://final-exam-back.vercel.app')
             .then(res => setBooks(res.data))
             .catch(err => console.error(err));
     }, []);

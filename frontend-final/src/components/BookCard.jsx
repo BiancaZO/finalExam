@@ -5,7 +5,7 @@ const BookCard = ({ book, onDelete }) => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/${book._id}`);
+            await axios.delete(`https://final-exam-back.vercel.app/${book._id}`);
             onDelete(book._id);
         } catch (err) {
             console.error('Error deleting book', err);
